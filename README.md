@@ -88,7 +88,7 @@ src/
 
 ## Privacy
 
-This extension processes all data locally in your browser. Your conversation data is **never** sent to any external server. See our [Privacy Policy](./PRIVACY.md) for details.
+This extension processes all data locally in your browser. Your conversation data is **never** sent to any external server. See our [Privacy Policy](./PRIVACY_POLICY.md) for details.
 
 ## Contributing
 
