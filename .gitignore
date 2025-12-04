@@ -42,3 +42,7 @@ coverage/
 *.zip
 web-ext-artifacts/
 
+# Specs (internal development docs)
+specs/
+.specify/
+
