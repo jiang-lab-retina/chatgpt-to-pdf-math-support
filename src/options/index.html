@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT to PDF - Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="options-container">
+    <h1 class="options-title">ChatGPT to PDF Settings</h1>
+    <p class="options-subtitle">Export ChatGPT conversations to PDF with math support</p>
+    
+    <div class="options-section">
+      <h2 class="section-title">PDF Export Options</h2>
+      <p class="section-description">Configure how your PDFs are generated.</p>
+      
+      <div class="option-row">
+        <label class="option-label">Dark Mode</label>
+        <span class="option-hint">Use dark background for PDF</span>
+        <input type="checkbox" id="darkMode" class="option-checkbox">
+      </div>
+      
+      <div class="option-row">
+        <label class="option-label">Show Page Numbers</label>
+        <span class="option-hint">Display page numbers at the bottom</span>
+        <input type="checkbox" id="showPageNumbers" class="option-checkbox" checked>
+      </div>
+      
+      <div class="option-row">
+        <label class="option-label">Show Role Icons</label>
+        <span class="option-hint">Show 👤 and 🤖 icons for messages</span>
+        <input type="checkbox" id="showIcons" class="option-checkbox" checked>
+      </div>
+    </div>
+    
+    <div class="options-section">
+      <h2 class="section-title">Other Settings</h2>
+      
+      <div class="option-row">
+        <label class="option-label">Show Donation Prompt</label>
+        <span class="option-hint">Show occasional donation reminder</span>
+        <input type="checkbox" id="showDonationPrompt" class="option-checkbox" checked>
+      </div>
+    </div>
+    
+    <div class="options-actions">
+      <button id="saveBtn" class="options-btn primary">Save Settings</button>
+      <button id="resetBtn" class="options-btn secondary">Reset to Defaults</button>
+    </div>
+    
+    <div id="statusMessage" class="status-message"></div>
+  </div>
+  <script type="module" src="options.ts"></script>
+</body>
+</html>
+

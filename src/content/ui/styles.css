@@ -1,0 +1,332 @@
+/* ============================================================================
+   ChatGPT Exporter - Content Script Styles
+   Note: Most styles are injected via Shadow DOM for isolation.
+   This file is for global styles that need to affect ChatGPT's page.
+   ============================================================================ */
+
+/* Message selection checkboxes (injected into ChatGPT's DOM) */
+.chatgpt-exporter-checkbox {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #9333ea;
+  z-index: 100;
+}
+
+/* Selected message highlight */
+.chatgpt-exporter-message-selected {
+  background-color: rgba(147, 51, 234, 0.1) !important;
+  border-left: 3px solid #9333ea !important;
+}
+
+/* Progress overlay */
+.chatgpt-exporter-progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.chatgpt-exporter-progress-container {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 32px 48px;
+  text-align: center;
+  min-width: 300px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.chatgpt-exporter-progress-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.chatgpt-exporter-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.chatgpt-exporter-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #a855f7);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.chatgpt-exporter-progress-text {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Error notification */
+.chatgpt-exporter-error {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #7f1d1d;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  z-index: 99999;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+.chatgpt-exporter-error-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.chatgpt-exporter-error-message {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.chatgpt-exporter-error-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.chatgpt-exporter-error-close:hover {
+  opacity: 1;
+}
+
+/* Success notification */
+.chatgpt-exporter-success {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #14532d;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  z-index: 99999;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+/* Warning notification */
+.chatgpt-exporter-warning {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #78350f;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  z-index: 99999;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Dropdown menu styles */
+.chatgpt-exporter-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 160px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  margin-bottom: 8px;
+}
+
+.chatgpt-exporter-dropdown-item {
+  padding: 10px 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.chatgpt-exporter-dropdown-item:hover {
+  background: #333;
+}
+
+.chatgpt-exporter-dropdown-item.selected {
+  background: rgba(147, 51, 234, 0.2);
+  color: #a855f7;
+}
+
+/* Dialog styles */
+.chatgpt-exporter-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn 0.2s ease;
+}
+
+.chatgpt-exporter-dialog {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.chatgpt-exporter-dialog-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.chatgpt-exporter-dialog-section {
+  margin-bottom: 20px;
+}
+
+.chatgpt-exporter-dialog-label {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.chatgpt-exporter-dialog-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.chatgpt-exporter-dialog-input:focus {
+  outline: none;
+  border-color: #9333ea;
+}
+
+.chatgpt-exporter-dialog-select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chatgpt-exporter-dialog-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chatgpt-exporter-dialog-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: #9333ea;
+}
+
+.chatgpt-exporter-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #333;
+}
+
+.chatgpt-exporter-dialog-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chatgpt-exporter-dialog-btn-primary {
+  background: #9333ea;
+  border: none;
+  color: #fff;
+}
+
+.chatgpt-exporter-dialog-btn-primary:hover {
+  background: #a855f7;
+}
+
+.chatgpt-exporter-dialog-btn-secondary {
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.chatgpt-exporter-dialog-btn-secondary:hover {
+  background: #333;
+}
+

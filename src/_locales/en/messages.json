@@ -1,0 +1,107 @@
+{
+  "extensionName": {
+    "message": "ChatGPT to PDF (math support)",
+    "description": "The name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Export ChatGPT conversations to PDF with proper LaTeX math formula rendering",
+    "description": "The description of the extension"
+  },
+  "toolbarExport": {
+    "message": "Export",
+    "description": "Export button text in toolbar"
+  },
+  "toolbarSelect": {
+    "message": "Select",
+    "description": "Select button text in toolbar"
+  },
+  "toolbarCancel": {
+    "message": "Cancel",
+    "description": "Cancel button text in toolbar"
+  },
+  "toolbarSettings": {
+    "message": "Settings",
+    "description": "Settings button tooltip"
+  },
+  "selectAll": {
+    "message": "All (default)",
+    "description": "Select all messages option"
+  },
+  "selectQuestions": {
+    "message": "Questions",
+    "description": "Select only user questions option"
+  },
+  "selectAnswers": {
+    "message": "Answers",
+    "description": "Select only AI answers option"
+  },
+  "selectNone": {
+    "message": "None",
+    "description": "Deselect all messages option"
+  },
+  "formatPdf": {
+    "message": "to PDF (default)",
+    "description": "PDF export format option"
+  },
+  "formatMarkdown": {
+    "message": "to Markdown",
+    "description": "Markdown export format option"
+  },
+  "formatText": {
+    "message": "to Text",
+    "description": "Plain text export format option"
+  },
+  "formatJson": {
+    "message": "to JSON",
+    "description": "JSON export format option"
+  },
+  "formatCsv": {
+    "message": "to CSV",
+    "description": "CSV export format option"
+  },
+  "formatImage": {
+    "message": "to Image",
+    "description": "Image export format option"
+  },
+  "exportProgress": {
+    "message": "Exporting... $PROGRESS$%",
+    "description": "Export progress message",
+    "placeholders": {
+      "progress": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "exportComplete": {
+    "message": "Export complete!",
+    "description": "Export success message"
+  },
+  "exportError": {
+    "message": "Export failed: $ERROR$",
+    "description": "Export error message",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "Unknown error"
+      }
+    }
+  },
+  "errorNoMessages": {
+    "message": "No messages selected for export",
+    "description": "Error when no messages are selected"
+  },
+  "errorTooManyMessages": {
+    "message": "Conversation exceeds 1000 messages limit",
+    "description": "Error when conversation is too long"
+  },
+  "warningLargeConversation": {
+    "message": "Large conversation - export may take longer",
+    "description": "Warning for conversations over 500 messages"
+  },
+  "domExtractionWarning": {
+    "message": "Some content may not export correctly. Please check for updates.",
+    "description": "Warning when DOM extraction partially fails"
+  }
+}
+

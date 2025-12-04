@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@types/*": ["src/types/*"],
+      "@shared/*": ["src/shared/*"],
+      "@exporters/*": ["src/exporters/*"],
+      "@content/*": ["src/content/*"]
+    },
+    "types": ["chrome", "node", "vitest/globals"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
+}
+
